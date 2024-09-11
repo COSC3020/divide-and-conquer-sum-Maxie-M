@@ -22,6 +22,11 @@ function divideAndConquerSum(a)
         return a;
     }
     
+    if (a.length === 2)
+    {
+        return a[0] + a[1];
+    }
+    
     let third = Math.floor(a.length / 3);
     let left = a.slice(0, third);
     let middle = a.slice(third, 2 * third);
