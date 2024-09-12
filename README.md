@@ -38,7 +38,7 @@ T(n) = {
 
 Now that we have all this information it is time to solve this using substitution.  
 
-The recurrence relation: T(n) = 3T(n3)+n
+The recurrence relation: T(n) = 3T(n/3)+n
 
 T(n) = 3(3T(n/9)+n/3) + 3 * n/3 + n
 
