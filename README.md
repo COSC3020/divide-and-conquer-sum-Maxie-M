@@ -31,9 +31,10 @@ most important part. Add your answer to this markdown file.
 
 The runtime for the algorithm implemented is O(n log n). The recurrence relation for T(n) in this divide and conquer sum will be
 
-T(n) = {            1                if n ≤ 1 
-        
-                    3T(n3) + n     if n > 1
+T(n) = { 
+1                if n ≤ 1  
+
+3T(n3) + n     if n > 1
 
 Now that we have all this information it is time to solve this using substitution.  
 
