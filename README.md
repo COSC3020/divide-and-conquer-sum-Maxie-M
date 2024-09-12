@@ -27,7 +27,7 @@ Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
 
-###Runtime Analysis, Maxie M:
+### Runtime Analysis, Maxie M:
 
 The runtime for the algorithm implemented is O(n log n). The recurrence relation for T(n) in this divide and conquer sum will be
 
@@ -39,14 +39,23 @@ Now that we have all this information it is time to solve this using substitutio
 The recurrence relation: T(n) = 3T(n3)+n
 
 T(n) = 3(3T(n/9)+n/3) + 3 * n/3 + n
-     = 9T(n/9) + 2n
-     = 9(3T(n/27) + n/9) + 2n
-     = 27T(n/27) + 9 * n/9 + 2n
-     = 27T(n/27) + 3n
-     = 27T(3T(n/81) + n/27) + 3n
-     = 81T(n/81) + 27 * n/27 + 3n
-     = 81T(n/81) + 4n
-       ︙
+
+= 9T(n/9) + 2n
+
+= 9(3T(n/27) + n/9) + 2n
+
+= 27T(n/27) + 9 * n/9 + 2n
+
+= 27T(n/27) + 3n
+
+= 27T(3T(n/81) + n/27) + 3n
+
+= 81T(n/81) + 27 * n/27 + 3n
+
+= 81T(n/81) + 4n
+
+︙
+
 T(n) = (3^i)T(n/(3^i))+in
 
 for i = lg n 
