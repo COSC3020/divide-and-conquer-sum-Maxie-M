@@ -25,3 +25,29 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+
+###Runtime Analysis, Maxie M:
+
+The runtime for the algorithm implemented is O(n log n). The recurrence relation for T(n) in this divide and conquer sum will be 
+
+T(n) = 
+{
+1                     if n ≤ 1 
+3T (n3) + n     if n > 1
+
+Now that we have all this information it is time to solve this using substitution.  
+The recurrence relation: T(n) = 3T(n3)+n
+T(n) = 3(3T(n9)+n3) + 3  n3+n
+          = 9T(n9)+2n
+         = 9(3T(n27)+n9) +2n
+         =27T(n27)+9n9+2n
+         =27T(n27)+3n
+         =27T(3T(n81)+n27)+3n
+         =81T(n81)+27n27+3n
+        = 81T(n81)+4n
+       ︙
+T(n)=3iT(n3i)+in
+for i = lg n 
+ T(n)=n+n log n   (n log n)
+Therefore the total time complexity simplifies to T(n)=O(n log n) for this algorithm. The first reason behind this is that the array is divided into three separate parts at each recursive step. This division at each recursive step will result in three sub-problems (each size n3), which will contribute to recurrence at the 3T(n3). The second reason is that, O(n) time will be spent merging the sub-arrays to form the results. These results will contribute to the recurrence for the +n term. Lastly at each level the depth of the recursion is log3(n), this will perform the linear work which will lead to the time complexity which was stated above (T(n)=O(n log n)). 
