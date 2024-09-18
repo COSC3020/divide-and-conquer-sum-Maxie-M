@@ -34,33 +34,32 @@ The runtime for the algorithm implemented is O(n log n). The recurrence relation
 T(n) = { 
 1                if n ≤ 2 
 
-3T(n3) + n     if n > 2
+3T(n3) + 1     if n > 2
 
 Now that we have all this information it is time to solve this using substitution.  
 
-The recurrence relation: T(n) = 3T(n/3)+n
+The recurrence relation: T(n) = 3T(n/3)+ 1
 
-T(n) = 3(3T(n/9)+n/3) + 3 * n/3 + n
+T(n) = 3(3T(n/9)+ 1) + 1
 
-= 9T(n/9) + 2n
+= 9T(n/9) + 3 + 1 
 
-= 9(3T(n/27) + n/9) + 2n
+= 9T(3T(n/27) + 1) + (3 + 1) 
 
-= 27T(n/27) + 9 * n/9 + 2n
+= 27T(n/27) + 3^2 + (3 + 1) 
 
-= 27T(n/27) + 3n
-
-= 27T(3T(n/81) + n/27) + 3n
-
-= 81T(n/81) + 27 * n/27 + 3n
-
-= 81T(n/81) + 4n
+= 27T(n/27) + 3^2 + 3^1 + 3^0 
 
 ︙
 
-T(n) = (3^i)T(n/(3^i))+in
+i-th expansion: 
+T(n) = ((3^i)T)(n/(3^i)) + ((3^(i-1)) + (3^(i-2) + ... + 3^1 + 1)
+T(n) = ((3^i)T)(n/(3^i)) + (3^i - 1)
+                           n
+T(n) = 3^(log_3(n)) T(1) + ∑ ar = a((1 - r^(n+1))/1-r)
+                         i = 0
+T(n) = n T(1) + ((1-3^log_3(n)+1))/1 - 3)) = (1- 3^(log_3(n) +1))/ -2 
 
-for i = lg n 
- T(n) = n + (n)log(n) ∈ Θ((n)log(n))
- 
-Therefore the total time complexity simplifies to T(n)=O(n log n) for this algorithm. The first reason behind this is that the array is divided into three separate parts at each recursive step. This division at each recursive step will result in three sub-problems (each size n3), which will contribute to recurrence at the 3T(n3). The second reason is that, O(n) time will be spent merging the sub-arrays to form the results. Meaning the amount of work needed to combine the partial results will be O(2), merge cost (summing) is linear. These results will contribute to the recurrence for the +n term. Lastly at each level the depth of the recursion is log3(n), this will lead to the total time complexity which was stated above, (T(n)=O(n log n)). 
+note: 3^(log_3(n)) = n 
+
+Therefore the total time complexity simplifies to T(n)=O(n log n) for this algorithm. The first reason behind this is that the array is divided into three separate parts at each recursive step. This division at each recursive step will result in three sub-problems (each size n3), which will contribute to recurrence at the 3T(n3). The total would be O(n), meaning the amount of work needed to combine the partial results will be O(2), merge cost (summing) is a constant. The wrtitten part is a cobination of all three parts and not linear. These results will contribute to the recurrence for the +1 term. Lastly at each level the depth of the recursion is log3(n), this will lead to the total time complexity which was stated above, (T(n)=O(n)). 
