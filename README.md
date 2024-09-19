@@ -37,7 +37,7 @@ $T(n) = \begin{cases}
 \end{cases}$
 
 The recurrence relation: 
-$T(n) = 3T\left(\frac{n}{3}\right + 1$
+$T(n) = 3T(\frac{n}{3} + 1$
 
 $T(n) = 3\left(3T\left(\frac{n}{9}\right) + 1\right) + 1$
 
