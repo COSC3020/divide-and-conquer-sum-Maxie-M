@@ -33,7 +33,7 @@ The runtime for the algorithm implemented is O(n log n). The recurrence relation
 
 $T(n) = \begin{cases} 
 1 & \text{if } n \leq 2 \\
-3T\left(\frac{n}{3}\right) + 1 & \text{if } n > 2 
+3T(\frac{n}{3}) + 1 & \text{if } n > 2 
 \end{cases}$
 
 The recurrence relation: 
