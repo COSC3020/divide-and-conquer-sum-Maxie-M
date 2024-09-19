@@ -31,6 +31,37 @@ most important part. Add your answer to this markdown file.
 
 The runtime for the algorithm implemented is O(n log n). The recurrence relation for T(n) in this divide and conquer sum will be
 
+$T(n) = \begin{case}
+1 & \text{if } n \leq 2 \\
+3T\left(\frac{n}{3}\right) + 1 & \text{if } n > 2
+\end{cases}$
+
+The recurrence relation: $T(n) = 3T\left(\frac{n}{3}\right + 1$
+
+$T(n) = 3\left(3T\left(\frac{n}{9}\right) + 1\right) + 1$
+
+$= 9T\left(\frac{n}{9}\right) + 3 + 1$
+
+$= 9\left(3T\left(\frac{n}{27}\right) + 1\right) + (3 + 1)$
+
+$= 27T\left(\frac{n}{27}\right) + 3^2 + (3 + 1)$
+
+$= 27T\left(\frac{n}{27}\right) + 3^2 + 3^1 + 3^0$
+
+$\vdots$
+
+i-th expansion: 
+
+$T(n) = 3^i \cdot T\left(\frac{n}{3^i}\right) + \left(3^{i-1} + 3^{i-2} + \cdots + 3^1 + 1\right)$
+
+$T(n) = 3^i \cdot T\left(\frac{n}{3^i}\right) + \left(3^i - 1\right)$
+
+$T(n) = 3^{\log_3(n)} \cdot T(1) + \sum_{i = 0}^{n} ar = a\left(\frac{1 - r^{n+1}}{1 - r}\right)$
+
+$T(n) = n \cdot T(1) + \frac{(1 - 3^{\log_3(n) + 1})}{1 - 3} = \frac{(1 - 3^{\log_3(n) + 1})}{-2}$
+
+**Note**: $3^{\log_3(n)} = n$
+
 $T(n) = {$
 $1$                $if n ≤ 2$
 
@@ -56,7 +87,7 @@ i-th expansion:
 
 $T(n) = (3^i)*T(n/(3^i)) + ((3^(i-1)) + (3^(i-2) + ... + 3^1 + 1)$
 $T(n) = (3^i)*T(n/(3^i)) + ((3^i) - 1)$
-$T(n) = 3^(^l^o^g^_^3^(^n^)^) * T(1) + ( \sum_{i = 0}^n ar) = a((1 - r^(n+1))/1-r)$
+$T(n) = 3^log_3(n)) * T(1) + ( \sum_{i = 0}^n ar) = a((1 - r^(n+1))/1-r)$
 $T(n) = n T(1) + ((1-3^log_3(n)+1))/1 - 3)) = (1- 3^(log_3(n) +1))/ -2$
 
 note: $3^(log_3(n)) = n$
