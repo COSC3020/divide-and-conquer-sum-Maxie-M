@@ -56,9 +56,9 @@ i-th expansion:
 
 $T(n) = (3^i)*T(n/(3^i)) + ((3^(i-1)) + (3^(i-2) + ... + 3^1 + 1)$
 $T(n) = (3^i)*T(n/(3^i)) + ((3^i) - 1)$
-$T(n) = (3^/log_3(n)) * T(1) + ( \sum_{i = 0}^n ar) = a((1 - r^(n+1))/1-r)$
+$T(n) = 3^(log_3(n)) * T(1) + ( \sum_{i = 0}^n ar) = a((1 - r^(n+1))/1-r)$
 $T(n) = n T(1) + ((1-3^log_3(n)+1))/1 - 3)) = (1- 3^(log_3(n) +1))/ -2$
 
-note: $3^(log_3(n))^$ $= n$
+note: $3^(log_3(n)) = n$
 
 Therefore the total time complexity simplifies to $T(n)=O(n)$ for this algorithm. The first reason behind this is that the array is divided into three separate parts at each recursive step. This division at each recursive step will result in three sub-problems (each size $n3$ ), which will contribute to recurrence at the $3T(n3)$. The total would be $O(n)$, meaning the amount of work needed to combine the partial results will be $O(2)$, merge cost (summing) is a constant. The wrtitten part is a cobination of all three parts and not linear. These results will contribute to the recurrence for the +1 term. Lastly at each level the depth of the recursion is log3(n), this will lead to the total time complexity which was stated above, ($T(n)=O(n)$). 
