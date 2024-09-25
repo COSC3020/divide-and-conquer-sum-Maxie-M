@@ -29,7 +29,7 @@ most important part. Add your answer to this markdown file.
 
 ### Runtime Analysis, Maxie M:
 
-The runtime for the algorithm implemented is O(n log n). The recurrence relation for T(n) in this divide and conquer sum will be
+The runtime for the algorithm implemented is $O(n)$. The recurrence relation for $T(n)$ in this divide and conquer sum will be
 
 $$
 T(n) = \begin{cases} 
@@ -67,4 +67,6 @@ $T(n) = n \cdot T(1) + \frac{(1 - 3^{\log_3(n) + 1})}{1 - 3} = \frac{(1 - 3^{\lo
 
 **Note**: $3^{\log_3(n)} = n$
 
-Therefore the total time complexity simplifies to $T(n)=O(n)$ for this algorithm. The first reason behind this is that the array is divided into three separate parts at each recursive step. This division at each recursive step will result in three sub-problems (each size $n3$ ), which will contribute to recurrence at the $3T(n3)$. The total would be $O(n)$, meaning the amount of work needed to combine the partial results will be $O(2)$, merge cost (summing) is a constant. The wrtitten part is a cobination of all three parts and not linear. These results will contribute to the recurrence for the $+1$ term. Lastly at each level the depth of the recursion is log3(n), this will lead to the total time complexity which was stated above, $T(n)=O(n)$. 
+**NOTE**: The negative denominator does not imply negative work because the numerator is also negative which leads to an overall positive expression.
+
+Therefore the total time complexity simplifies to $T(n) \in O(n)$ for this algorithm. The first reason behind this is that the array is divided into three separate parts at each recursive step. This division at each recursive step will result in three sub-problems (each size $\frac{n}{3}$ ), which will contribute to recurrence at the $3T(\frac{n}{3})$. The total would be $O(n)$, meaning, noting that the merge cost (summing) is a constant. The written part is a combination of all three parts and not linear. These results will contribute to the recurrence for the $+1$ term. Lastly at each level the depth of the recursion is ${\log_3(n)}$, this will lead to the total time complexity which was stated above, $T(n) \in O(n)$. 
